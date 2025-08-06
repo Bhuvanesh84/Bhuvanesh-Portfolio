@@ -1,122 +1,84 @@
-<!-- Anime-Style Portfolio for Bhuvanesh Yampala -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bhuvanesh Yampala - The Technomancer</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bhuvanesh Yampala - Dusk of the Technomancer</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
     body {
-      background: linear-gradient(to bottom, #f0f4f8, #ffe4e6);
+      margin: 0;
+      overflow: hidden;
       font-family: 'Segoe UI', sans-serif;
-      overflow-x: hidden;
     }
-    .petal {
-      position: absolute;
-      width: 24px;
-      height: 24px;
-      background-image: url('https://i.ibb.co/hK7KTKF/sakura.png');
-      background-size: cover;
-      animation: floatDown 10s linear infinite;
+    .bg-video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+      filter: brightness(0.5);
     }
-    @keyframes floatDown {
-      0% {transform: translateY(-100px) rotate(0deg);}
-      100% {transform: translateY(100vh) rotate(360deg);}
+    .content {
+      z-index: 1;
+    }
+    .katana {
+      width: 120px;
+      animation: slash 4s infinite alternate ease-in-out;
+    }
+    @keyframes slash {
+      from { transform: rotate(-45deg) scale(1); }
+      to { transform: rotate(-45deg) scale(1.1); }
     }
   </style>
 </head>
-<body class="text-gray-800">
-  <div class="relative min-h-screen flex flex-col items-center justify-center text-center p-10">
-    <h1 class="text-5xl font-bold text-pink-600 mb-4" id="title">Bhuvanesh Yampala</h1>
-    <p class="text-xl italic mb-6" id="tagline">"The Technomancer of Embedded Realms"</p>
-    <a href="#about" class="bg-pink-500 text-white px-6 py-3 rounded-full hover:bg-pink-600 transition">Enter the Realm</a>
+<body class="text-white text-center">
+
+  <!-- Background video -->
+  <video autoplay muted loop class="bg-video">
+    <source src="https://cdn.pixabay.com/video/2023/07/11/175429-842870113_tiny.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Hero Section -->
+  <div class="flex flex-col justify-center items-center h-screen content p-4">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Katana_icon.svg" class="katana mb-6" alt="Katana" />
+    <h1 class="text-5xl font-bold mb-4">Bhuvanesh Yampala</h1>
+    <p class="text-xl italic mb-6">"Dusk falls. The Technomancer awakens."</p>
+    <a href="#enter" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full transition">Enter the Realm</a>
   </div>
 
-  <div id="about" class="p-10 bg-white shadow-inner">
-    <h2 class="text-3xl font-bold text-pink-500 mb-4">📖 Chapter 1: The Awakening</h2>
-    <p class="mb-4">In the circuitry of silence and the hum of innovation, a young mind awakens—<strong>Bhuvanesh Yampala</strong>, the dreamer who whispers commands into silicon souls. With wisdom gathered from sacred halls of KL University and enchanted scrolls from Dhanekula Institute, he crafts magic from code and circuits.</p>
-    <ul class="list-disc ml-5">
-      <li>B.Tech in ECE, KL University — CGPA: 9.35</li>
-      <li>Diploma in ECE, Dhanekula Institute — CGPA: 9.10</li>
-      <li>Secondary, CBSE — CGPA: 6.80</li>
+  <!-- Entry Section -->
+  <div id="enter" class="min-h-screen bg-black bg-opacity-70 text-white p-10 text-left">
+    <h2 class="text-4xl font-bold text-red-400 mb-6">📜 Scroll of Origins</h2>
+    <p class="mb-4">In the twilight of code and circuits, <strong>Bhuvanesh Yampala</strong> emerged from Vijayawada as a master of Embedded Systems and IoT. Trained in the arts of KL University and TESSOLVE, he blends logic and legend, science and soul.</p>
+
+    <h3 class="text-2xl font-bold mt-8 text-red-300">🧪 Skills & Abilities</h3>
+    <ul class="list-disc ml-6 mt-2">
+      <li>Embedded Systems & IoT</li>
+      <li>C, C++, Java</li>
+      <li>Arduino & Robotics</li>
     </ul>
-  </div>
 
-  <div class="p-10 bg-pink-50">
-    <h2 class="text-3xl font-bold text-pink-600 mb-4">🧙 Skills & Powers</h2>
-    <ul class="grid grid-cols-2 gap-4 text-lg">
-      <li>⚔️ Embedded Systems</li>
-      <li>📡 Internet of Things (IoT)</li>
-      <li>🧠 C / C++ Programming</li>
-      <li>☕ Java</li>
-      <li>⚡ Arduino</li>
-      <li>🤖 Robotics</li>
+    <h3 class="text-2xl font-bold mt-8 text-red-300">🛠️ Projects</h3>
+    <ul class="list-disc ml-6 mt-2">
+      <li>Glasses for the Blind – Guidance through ultrasonic whispers</li>
+      <li>Warehouse Monitoring System – IoT and GSM for guardianship</li>
     </ul>
-  </div>
 
-  <div class="p-10 bg-white">
-    <h2 class="text-3xl font-bold text-pink-500 mb-4">📜 Quests Undertaken</h2>
-    <ul class="space-y-4">
-      <li><strong>Glasses for the Blind</strong> — A wearable device using ultrasonic whispers to guide the visionless.</li>
-      <li><strong>Warehouse Monitoring System</strong> — A guardian that watches over crops and environments using Blynk IoT and GSM.</li>
-    </ul>
-  </div>
-
-  <div class="p-10 bg-pink-100">
-    <h2 class="text-3xl font-bold text-pink-600 mb-4">🎓 Sacred Scrolls (Certifications)</h2>
-    <ul class="list-disc ml-5">
+    <h3 class="text-2xl font-bold mt-8 text-red-300">🎓 Certifications</h3>
+    <ul class="list-disc ml-6 mt-2">
       <li>Industrial Embedded Systems and IoT – TESSOLVE</li>
-      <li>Embedded System Application and IoT – TESSOLVE</li>
       <li>MATLAB Onramp Certification – MathWorks</li>
     </ul>
-  </div>
 
-  <div class="p-10 bg-white">
-    <h2 class="text-3xl font-bold text-pink-500 mb-4">🏯 Guilds & Alliances</h2>
-    <ul class="list-disc ml-5">
-      <li>Vice President – Robotronics Club</li>
-      <li>Drafting Lead – IEEE EDS Society</li>
-      <li>Non-Technical Core – NSS (Unit-8)</li>
-    </ul>
-  </div>
-
-  <div class="p-10 bg-pink-50 text-center">
-    <h2 class="text-3xl font-bold text-pink-600 mb-4">📮 Summon the Technomancer</h2>
-    <p>Email: <a class="text-blue-600" href="mailto:bhuvaneshyampla03@gmail.com">bhuvaneshyampla03@gmail.com</a></p>
+    <h3 class="text-2xl font-bold mt-8 text-red-300">📮 Contact</h3>
+    <p>Email: <a class="text-blue-400" href="mailto:bhuvaneshyampla03@gmail.com">bhuvaneshyampla03@gmail.com</a></p>
     <p>Phone: +91 9491225583</p>
     <p>Location: Vijayawada, India</p>
   </div>
 
-  <!-- Petals Animation -->
-  <script>
-    for (let i = 0; i < 15; i++) {
-      let petal = document.createElement('div');
-      petal.className = 'petal';
-      petal.style.left = Math.random() * 100 + 'vw';
-      petal.style.animationDuration = 5 + Math.random() * 5 + 's';
-      document.body.appendChild(petal);
-    }
-  </script>
-
-  <!-- AnimeJS Intro Animation -->
-  <script>
-    anime({
-      targets: '#title',
-      translateY: [-100, 0],
-      opacity: [0, 1],
-      duration: 2000,
-      easing: 'easeOutExpo'
-    });
-    anime({
-      targets: '#tagline',
-      delay: 500,
-      translateY: [50, 0],
-      opacity: [0, 1],
-      duration: 2000,
-      easing: 'easeOutExpo'
-    });
-  </script>
 </body>
 </html>
